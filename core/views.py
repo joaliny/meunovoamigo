@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required, user_passes_test
 
@@ -9,9 +10,17 @@ def dashboard(request):
         "total_pets": 25,
         "total_consultas": 5,
     }
-    return render(request, "dashboard.html", context)
-
-from django.http import HttpResponse
+    return render(request, "core/dashboard.html", context)
 
 def home(request):
-    return render(request, 'core/home.html')
+    return render(request, "core/home.html")
+
+def listar_pets(request):
+    return render(request, 'core/listar_pets.html')
+
+def listar_usuarios(request):
+    return render(request, 'core/listar_usuarios.html')
+
+def listar_consultas(request):
+    return render(request, 'core/listar_consultas.html')
+

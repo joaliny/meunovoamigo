@@ -1,0 +1,49 @@
+<!-- core/templates/core/dashboard.html -->
+ {% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Admin</title>
+  <link rel="stylesheet" href="{% static 'core/css/dashboard.css' %}">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Meu Amigo</h2>
+      <p class="welcome">👋 Olá, {{ user.username }}</p>
+      <nav>
+        <ul>
+          <li><a href="{% url 'listar_pets' %}">🐶 Gerenciar Pets</a></li>
+          <li><a href="{% url 'listar_usuarios' %}">👥 Gerenciar Usuários</a></li>
+          <li><a href="{% url 'listar_consultas' %}">📅 Gerenciar Consultas</a></li>
+          <li><a href="{% url 'logout' %}">🚪 Sair</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+      <header>
+        <h1>Dashboard do Admin</h1>
+      </header>
+
+      <section class="cards">
+        <div class="card blue">
+          <h3>Total Usuários</h3>
+          <p>{{ total_usuarios }}</p>
+        </div>
+        <div class="card green">
+          <h3>Total Pets</h3>
+          <p>{{ total_pets }}</p>
+        </div>
+        <div class="card orange">
+          <h3>Total Consultas</h3>
+          <p>{{ total_consultas }}</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
