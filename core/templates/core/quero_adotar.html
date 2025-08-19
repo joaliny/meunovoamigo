@@ -1,0 +1,38 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Quero Adotar</title>
+    <link rel="stylesheet" href="{% static 'core/css/quero_adotar.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>🐾 Encontre seu novo melhor amigo!</h1>
+        <p>Veja abaixo os pets disponíveis para adoção:</p>
+
+        <!-- Aqui você pode listar os pets dinamicamente -->
+        <div class="pet-list">
+            <!-- Exemplo estático -->
+          <div class="pet-list">
+    <div class="pet-card">
+        <img src="{% static 'img/1.jpg' %}" alt="Cachorro para adoção" style="width: 300px; height: auto;">
+        <h3>Rex</h3>
+        <p>Idade: 2 anos</p>
+        <p>Raça: SRD</p>
+        <button>Adotar</button>
+    </div>
+
+    <div class="pet-card">
+        <img src="{% static 'img/1.jpg' %}" alt="Cachorro para adoção" style="width: 300px; height: auto;">
+        <h3>Laydy</h3>
+        <p>Idade: 5 anos</p>
+        <p>Raça: SRD</p>
+        <button>Adotar</button>
+    </div>
+</div>
+
+    </div>
+</body>
+</html>

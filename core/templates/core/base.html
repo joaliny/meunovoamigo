@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Meu Novo Amigo{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Meu Novo Amigo</h1>
+        <div class="nav-links">
+            <a href="{% url 'home' %}">🏠 Início</a>
+            <a href="{% url 'quero_adotar' %}">🐶 Quero adotar</a>
+            <a href="{% url 'listar_pets' %}">🐶 Pets</a>
+            <!-- <a href="{% url 'listar_consultas' %}">📅 Consultas</a>
+            <a href="{% url 'configuracoes' %}">⚙️ Configurações</a> -->
+        </div>
+    </div>
+
+    {% block content %}
+    <!-- O conteúdo específico de cada página vai aqui -->
+    {% endblock %}
+</body>
+</html>

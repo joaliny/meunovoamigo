@@ -15,10 +15,11 @@
       <p class="welcome">👋 Olá, {{ user.username }}</p>
       <nav>
         <ul>
+          <li><a href="{% url 'home' %}">🏠 Início</a></li>
           <li><a href="{% url 'listar_pets' %}">🐶 Gerenciar Pets</a></li>
           <li><a href="{% url 'listar_usuarios' %}">👥 Gerenciar Usuários</a></li>
           <li><a href="{% url 'listar_consultas' %}">📅 Gerenciar Consultas</a></li>
-          <li><a href="{% url 'logout' %}">🚪 Sair</a></li>
+          <!-- <li><a href="{% url 'logout' %}">🚪 Sair</a></li> -->
         </ul>
       </nav>
     </aside>

@@ -135,6 +135,9 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 
 LOGIN_REDIRECT_URL = '/dashboard/'
 
+LOGOUT_REDIRECT_URL = '/login/'  # ou qualquer outra rota desejada
+
+
 
 
 # Default primary key field type

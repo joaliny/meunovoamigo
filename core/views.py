@@ -15,6 +15,9 @@ def dashboard(request):
 def home(request):
     return render(request, "core/home.html")
 
+def quero_adotar(request):
+    return render(request, 'core/quero_adotar.html')
+
 def listar_pets(request):
     return render(request, 'core/listar_pets.html')
 
@@ -23,4 +26,5 @@ def listar_usuarios(request):
 
 def listar_consultas(request):
     return render(request, 'core/listar_consultas.html')
+
 
