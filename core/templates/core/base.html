@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}Meu Novo Amigo{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/home.css' %}">
 </head>
 <body>
     <div class="navbar">
@@ -12,6 +13,7 @@
         <div class="nav-links">
             <a href="{% url 'home' %}">🏠 Início</a>
             <a href="{% url 'quero_adotar' %}">🐶 Quero adotar</a>
+            <a href="{% url 'doar_pet' %}">❤️ Doar</a>
             <a href="{% url 'listar_pets' %}">🐶 Pets</a>
             <!-- <a href="{% url 'listar_consultas' %}">📅 Consultas</a>
             <a href="{% url 'configuracoes' %}">⚙️ Configurações</a> -->
