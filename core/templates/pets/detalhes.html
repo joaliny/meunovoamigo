@@ -1,0 +1,16 @@
+<h2>{{ pet.nome }}</h2>
+
+<!-- Imagem do pet -->
+<img src="{{ pet.imagem.url }}" alt="{{ pet.nome }}">
+
+<!-- Descrição e dados -->
+<p>{{ pet.descricao }}</p>
+<p>Raça: {{ pet.raca }}</p>
+<p>Idade: {{ pet.idade }} anos</p>
+
+<!-- Verifica se o pet está disponível -->
+{% if pet.disponivel %}
+  <a href="#">Quero adotar!</a> <!-- Aqui futuramente podemos colocar um formulário -->
+{% else %}
+  <p>Este pet já foi adotado ❤️</p>
+{% endif %}

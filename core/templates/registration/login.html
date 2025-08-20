@@ -1,0 +1,17 @@
+<!-- Tela de login -->
+<h2>Entrar</h2>
+<form method="post">
+  {% csrf_token %} <!-- Proteção contra ataques CSRF -->
+  {{ form.as_p }} <!-- Renderiza os campos do formulário -->
+  <button type="submit">Login</button>
+</form>
+<p>Não tem conta? <a href="{% url 'register' %}">Cadastre-se aqui</a></p>
+
+
+
+<h2>Login</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Entrar</button>
+</form>

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'pets',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,8 @@ ROOT_URLCONF = 'meunovoamigo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+       'DIRS': [BASE_DIR / 'templates'],  # Isso garante que a pasta templates seja reconhecida
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,3 +140,12 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Define para onde o usuário será redirecionado após login
+LOGIN_REDIRECT_URL = 'home'
+
+# Define a URL da página de login
+LOGIN_URL = 'login'
+
+# Redireciona para login após logout
+LOGOUT_REDIRECT_URL = 'login'

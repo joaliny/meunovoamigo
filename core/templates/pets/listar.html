@@ -1,0 +1,16 @@
+<h2>Pets disponíveis para adoção</h2>
+<div class="pet-list">
+  {% for pet in pets %}
+    <div class="pet-card">
+      <!-- Exibe a imagem do pet -->
+      <img src="{{ pet.imagem.url }}" alt="{{ pet.nome }}">
+      
+      <!-- Nome e informações básicas -->
+      <h3>{{ pet.nome }}</h3>
+      <p>{{ pet.raca }} - {{ pet.idade }} anos</p>
+      
+      <!-- Link para ver mais detalhes -->
+      <a href="{% url 'detalhes_pet' pet.id %}">Ver detalhes</a>
+    </div>
+  {% endfor %}
+</div>
