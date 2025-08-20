@@ -1,38 +1,29 @@
-
+{% extends 'core/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Quero Adotar</title>
-    <link rel="stylesheet" href="{% static 'core/css/quero_adotar.css' %}">
-</head>
-<body>
-    <div class="container">
-        <h1>🐾 Encontre seu novo melhor amigo!</h1>
-        <p>Veja abaixo os pets disponíveis para adoção:</p>
 
-        <!-- Aqui você pode listar os pets dinamicamente -->
-        <div class="pet-list">
-            <!-- Exemplo estático -->
-          <div class="pet-list">
-    <div class="pet-card">
-        <img src="{% static 'img/1.jpg' %}" alt="Cachorro para adoção" style="width: 300px; height: auto;">
-        <h3>Rex</h3>
-        <p>Idade: 2 anos</p>
-        <p>Raça: SRD</p>
-        <button>Adotar</button>
-    </div>
+{% block title %}Quero Adotar{% endblock %}
 
-    <div class="pet-card">
-        <img src="{% static 'img/1.jpg' %}" alt="Cachorro para adoção" style="width: 300px; height: auto;">
-        <h3>Laydy</h3>
-        <p>Idade: 5 anos</p>
-        <p>Raça: SRD</p>
-        <button>Adotar</button>
+{% block content %}
+<div class="container">
+    <h2>🐾 Encontre seu novo melhor amigo!</h2>
+    <p>Veja abaixo os pets disponíveis para adoção:</p>
+
+    <div class="pet-list">
+        {% for pet in pets %}
+        <div class="pet-card">
+            {% if pet.foto %}
+                <img src="{{ pet.foto.url }}" alt="{{ pet.nome }}" style="width: 300px; height: auto;">
+            {% else %}
+                <img src="{% static 'img/default.jpg' %}" alt="Pet sem foto" style="width: 300px; height: auto;">
+            {% endif %}
+            <h3>{{ pet.nome }}</h3>
+            <p>Idade: {{ pet.idade }}</p>
+            <p>Raça: {{ pet.raca }}</p>
+            <button>Adotar</button>
+        </div>
+        {% empty %}
+        <p>Nenhum pet disponível no momento.</p>
+        {% endfor %}
     </div>
 </div>
-
-    </div>
-</body>
-</html>
+{% endblock %}

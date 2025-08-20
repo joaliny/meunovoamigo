@@ -7,10 +7,14 @@ from core.views import quero_adotar
 urlpatterns = [
     path("dashboard/", views.dashboard, name="dashboard"),
     path('', home, name='home'),
-    path('quero-adotar/', quero_adotar, name='quero_adotar'),
+    
     path('pets/', views.listar_pets, name='listar_pets'),
     path('usuarios/', views.listar_usuarios, name='listar_usuarios'),
     path('consultas/', views.listar_consultas, name='listar_consultas'),
-    
+    path('quero-adotar/', views.quero_adotar, name='quero_adotar'),
+    path('doar/', views.doar_pet, name='doar_pet'),
+    path('pets/', views.listar_pets, name='listar_pets'),
+    path('configuracoes/', views.configuracoes, name='configuracoes'), 
 
 ]
+
