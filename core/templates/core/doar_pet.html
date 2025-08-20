@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Doar um Pet{% endblock %}
+
+{% block content %}
+<div class="content">
+    <h2>Formulário de Doação 🐾</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar Doação</button>
+    </form>
+</div>
+{% endblock %}
