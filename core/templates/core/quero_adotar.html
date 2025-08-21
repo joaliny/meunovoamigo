@@ -17,8 +17,9 @@
                 <img src="{% static 'img/default.jpg' %}" alt="Pet sem foto" style="width: 300px; height: auto;">
             {% endif %}
             <h3>{{ pet.nome }}</h3>
-            <p>Idade: {{ pet.idade }}</p>
-            <p>Raça: {{ pet.raca }}</p>
+            <p><strong>Idade:</strong> {{ pet.idade }}</p>
+            <p><strong>Raça:</strong> {{ pet.raca }}</p>
+            <p><strong>Descrição:</strong> {{ pet.descricao }}</p>
             <button>Adotar</button>
         </div>
         {% empty %}
