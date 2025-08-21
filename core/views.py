@@ -2,8 +2,21 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.shortcuts import get_object_or_404, redirect
 from .forms import PetForm
 from .models import Pet
+from .models import Pet, Adocao 
+
+
+@login_required
+def adotar_pet(request, pet_id):
+    pet = get_object_or_404(Pet, id=pet_id)
+    
+    # Cria um registro de adoção
+    Adocao.objects.create(usuario=request.user, pet=pet)
+    
+    # Redireciona para uma página de confirmação
+    return redirect('confirmacao_adocao')
 
 
 @login_required
@@ -50,3 +63,10 @@ def listar_consultas(request):
 
 def configuracoes(request):
     return render(request, 'core/configuracoes.html')
+
+def confirmacao_adocao(request):
+    return render(request, 'confirmacao.html')
+
+def formulario_adocao(request, pet_id):
+    pet = get_object_or_404(Pet, id=pet_id)
+    return render(request, 'formulario_adocao.html', {'pet': pet})

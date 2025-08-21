@@ -20,7 +20,14 @@
             <p><strong>Idade:</strong> {{ pet.idade }}</p>
             <p><strong>Raça:</strong> {{ pet.raca }}</p>
             <p><strong>Descrição:</strong> {{ pet.descricao }}</p>
-            <button>Adotar</button>
+            <!-- <button>Adotar</button> -->
+             <!-- <form method="POST" action="{% url 'adotar_pet' pet.id %}">
+    {% csrf_token %}
+    <button type="submit">Adotar</button>
+</form> -->
+
+<a href="{% url 'formulario_adocao' pet.id %}">Adotar</a>
+
         </div>
         {% empty %}
         <p>Nenhum pet disponível no momento.</p>
