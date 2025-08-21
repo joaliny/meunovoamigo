@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 # pets/models.py
 from django.db import models
 
@@ -8,5 +8,4 @@ class Pet(models.Model):
 
     def __str__(self):
         return self.nome
-=======
->>>>>>> Stashed changes
+
