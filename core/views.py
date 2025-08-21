@@ -14,6 +14,7 @@ def dashboard(request):
         "total_pets": 25,
         "total_consultas": 5,
     }
+<<<<<<< Updated upstream
     return render(request, "core/dashboard.html", context)
 
 def home(request):
@@ -50,3 +51,6 @@ def listar_consultas(request):
 
 def configuracoes(request):
     return render(request, 'core/configuracoes.html')
+=======
+    return render(request, "dashboard.html", context)
+>>>>>>> Stashed changes
